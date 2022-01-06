@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="grid place-items-center h-screen">
-  <section class="flex flex-col md:flex-row gap-11 py-10 px-5 bg-white rounded-md shadow-lg w-3/4 md:max-w-2xl">
+<main class="grid place-items-center lg:h-screen">
+  <section class="flex flex-col md:flex-row gap-11 py-10 px-5 bg-white rounded-md shadow-lg w-3/4 md:max-w-2xl my-10 lg:my-0">
     <div class="text-indigo-500 flex flex-col justify-between lg:w-2/5">
       <img src="{{ asset('images/'.$item->item_image) }}" alt="{{ $item->item_name }}" />
     </div>
@@ -22,7 +22,7 @@
             @endfor
           </select>
           <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-          <button type="submit" id="addToCartButton" class="ml-5 bg-indigo-600 hover:bg-indigo-500 focus:outline-none transition text-white uppercase px-8 py-3">add to cart</button>
+          <button type="submit" id="addToCartButton" class="mt-5 lg:ml-5 bg-indigo-600 hover:bg-indigo-500 focus:outline-none transition text-white uppercase px-8 py-3 md:text-sm md:px-2">add to cart</button>
         </form>
       </div>
       @else
