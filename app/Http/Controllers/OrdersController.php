@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Order;
 use App\Cart;
+use App\User;
+use App\Item;
 
 class OrdersController extends Controller
 {
@@ -46,5 +48,13 @@ class OrdersController extends Controller
         DB::commit();
 
         return redirect('/thanks');
+    }
+
+    public function getHistory(User $user){
+        $item_ids = Order::where('user_id', $user->id)->pluck('item_id');
+        $items = Item::whereIn('id', $item_ids)->orderBy('created_at', 'desc')->get();
+        $items->load('orders');
+
+        return view('items.history')->with('items', $items);
     }
 }

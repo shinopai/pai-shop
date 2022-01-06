@@ -45,7 +45,7 @@ class Item extends Model
         return $this->hasMany('App\Cart');
     }
 
-    public function items(){
-        return $this->hasMany('App\Item');
+    public function orders(){
+        return $this->hasMany('App\Order');
     }
 }

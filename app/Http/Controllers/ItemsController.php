@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Log;
 use App\Item;
 use App\Cart;
 use App\Stock;
+use App\User;
+use App\Order;
 
 class ItemsController extends Controller
 {

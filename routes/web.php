@@ -21,3 +21,4 @@ Route::get('/carts', 'CartsController@index')->name('carts.index');
 // orders
 Route::get('/thanks', 'OrdersController@showThanks')->name('orders.thanks');
 Route::post('/orders', 'OrdersController@buyItem')->name('orders.buyitem');
+Route::get('/users/{user}/history', 'OrdersController@getHistory')->name('orders.gethistory');
