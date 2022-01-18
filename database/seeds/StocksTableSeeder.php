@@ -13,10 +13,10 @@ class StocksTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i < Item::count(); $i++) {
+        for ($i=0; $i < Item::count(); $i++) {
             Stock::create([
                 'quantity' => rand(1, 10),
-                'item_id' => $i
+                'item_id' => $i + 1
             ]);
         }
     }
