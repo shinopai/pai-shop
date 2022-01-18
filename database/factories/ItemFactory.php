@@ -19,6 +19,6 @@ $factory->define(Item::class, function (Faker $faker) {
         'body' => $faker->sentence(3),
         'price' => $faker->biasedNumberBetween(3000, 40000),
         'item_image' => $images[rand(0, 4)],
-        'category_id' => rand(1, 9)
+        'category_id' => rand(1, 4)
     ];
 });
